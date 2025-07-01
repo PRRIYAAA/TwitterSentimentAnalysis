@@ -4,9 +4,7 @@ This project performs sentiment analysis on tweets using Machine Learning and NL
 
 ## 📸 Demo
 
-![image alt]https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo1.png
-![image alt]https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo2.png
-![image alt]https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo3.png
+![tweeter]https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo1.png
 
 ## 📌 Features
 
