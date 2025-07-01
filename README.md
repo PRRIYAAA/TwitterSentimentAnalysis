@@ -34,15 +34,10 @@ pip install -r requirements.txt
 
 # 🐦 Twitter Sentiment Analysis
 
-[![GitHub license](https://img.shields.io/github/license/PRRIYAAA/TwitterSentimentAnalysis)](https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/PRRIYAAA/TwitterSentimentAnalysis?style=social)](https://github.com/PRRIYAAA/TwitterSentimentAnalysis/stargazers)
-
 A Python-based project that uses **Natural Language Processing (NLP)** and **Machine Learning** to analyze the sentiment of tweets — whether they are **positive**, **negative**, or **neutral**.
-
----
 
 ## 📸 Demo
 
-https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo1.png
-https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo2.png
-https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo3.png
+![image alt]https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo1.png
+![image alt]https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo2.png
+![image alt]https://github.com/PRRIYAAA/TwitterSentimentAnalysis/blob/3273853248e84b176c73956a603e41d841f360b0/assests/demo3.png
