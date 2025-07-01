@@ -45,8 +45,8 @@ A Python-based project that uses **Natural Language Processing (NLP)** and **Mac
 
 > _Sentiment classification on tweets related to trending topics:_
 
-![Sentiment Pie Chart](demo/sentiment_pie_chart.png)  
-![Tweet Sample](demo/tweet_sample_output.png)
+![Sentiment Pie Chart](assests/demo1.png)  
+![Tweet Sample](assests/demo2.png)
 
 ---
 
