@@ -6,7 +6,7 @@ This project performs sentiment analysis on tweets using Machine Learning and NL
 
 ## 📌 Features
 
-1. Dataset from Kaggle  
+1. pandas for Dataset (CSV files)
 2. Text preprocessing and cleaning  
 3. Sentiment classification using Machine Learning  
 4. Visual representation of sentiment analysis results  
@@ -15,9 +15,9 @@ This project performs sentiment analysis on tweets using Machine Learning and NL
 
 ## 📦 Technologies Used
 
-- Python  
-- Tweepy (for Twitter API access)  
-- TextBlob / NLTK / Vader (for sentiment analysis)  
+- Python - Flask
+- Dataset from Kaggle
+-  NLTK (for sentiment analysis)  
 - Matplotlib / Seaborn (for visualization)  
 
 ---
@@ -55,5 +55,14 @@ A Python-based project that uses **Natural Language Processing (NLP)** and **Mac
 ```bash
 git clone https://github.com/PRRIYAAA/TwitterSentimentAnalysis.git
 cd TwitterSentimentAnalysis
+
+python app.py 
 pip install -r requirements.txt
+
+##DEMO
+
+![Screenshot 2025-07-01 171527](https://github.com/user-attachments/assets/dc8b6d56-a851-4ab6-af52-279ab7f71db7)
+![Screenshot 2025-07-01 171559](https://github.com/user-attachments/assets/b9bdeb4c-726d-4aa6-b648-3e07ccd91bb6)
+![Screenshot 2025-07-01 171546](https://github.com/user-attachments/assets/b67440a7-3504-4655-88e8-8416dd28be15)
+
 
