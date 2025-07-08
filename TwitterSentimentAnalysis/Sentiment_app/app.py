@@ -2,9 +2,20 @@ from flask import Flask, request, render_template
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 import pandas as pd
+import os
+import pandas as pd
+import gdown
 
-# Load CSV
-df = pd.read_csv('twitter_dataset.csv') 
+# Download dataset from Google Drive if not present
+dataset_url = 'https://drive.google.com/uc?id=15MLmz8uAYjqDNBFVwievODSXpXhXr14m'
+dataset_path = 'twitter_dataset.csv'
+
+if not os.path.exists(dataset_path):
+    gdown.download(dataset_url, dataset_path, quiet=False)
+
+# Now load the dataset
+df = pd.read_csv(dataset_path)
+
 
 # Map numerical labels to string labels
 label_mapping = {0: 'negative', 4: 'positive'}
@@ -44,3 +55,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
