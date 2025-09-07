@@ -21,43 +21,55 @@
         <div class="col-md-7">
             <div class="card p-4">
                 <h2 class="text-center mb-4">Tweet Sentiment Analyzer 💬</h2>
-                <form method="POST" action="/predict">
-                    <div class="mb-3">
-                        <label for="text" class="form-label">Enter Tweet</label>
-                        <textarea class="form-control" name="text" id="text" rows="4" placeholder="Type your tweet here..." required>{{ input_text or '' }}</textarea>
-                    </div>
-                    <div class="d-flex gap-2">
-                        <button type="submit" class="btn btn-primary w-50">Analyze Sentiment ✨</button>
-                        <button type="reset" class="btn btn-secondary w-50">Clear ❌</button>
-                    </div>
-                </form>
+                
+                <!-- ✅ No Flask form, just input + button -->
+                <div class="mb-3">
+                    <label for="tweet" class="form-label">Enter Tweet</label>
+                    <textarea class="form-control" id="tweet" rows="4" placeholder="Type your tweet here..."></textarea>
+                </div>
+                <div class="d-flex gap-2">
+                    <button onclick="analyze()" class="btn btn-primary w-50">Analyze Sentiment ✨</button>
+                    <button type="reset" class="btn btn-secondary w-50" onclick="clearResult()">Clear ❌</button>
+                </div>
 
-                {% if prediction %}
-                    <div class="alert mt-4 
-                        {% if 'positive' in prediction.lower() %}
-                            alert-success
-                        {% elif 'negative' in prediction.lower() %}
-                            alert-danger
-                        {% else %}
-                            alert-secondary
-                        {% endif %}
-                    ">
-                        <h5 class="mb-0">Prediction: <strong>{{ prediction }}</strong></h5>
-                    </div>
-                {% endif %}
+                <!-- ✅ Prediction result -->
+                <div id="resultBox" class="mt-4"></div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ✅ JavaScript placed at the end of body -->
+<!-- ✅ JavaScript -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelector('form').addEventListener('reset', function () {
-            const result = document.querySelector('.alert');
-            if (result) result.remove();
-        });
+async function analyze() {
+    let text = document.getElementById("tweet").value.trim();
+    if (!text) {
+        document.getElementById("resultBox").innerHTML =
+            `<div class="alert alert-warning">⚠️ Please enter a tweet first!</div>`;
+        return;
+    }
+
+    let res = await fetch("https://twitter-sentiment.onrender.com/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text })
     });
+
+    let data = await res.json();
+    let sentiment = data.sentiment.toLowerCase();
+
+    let alertClass = "alert-secondary";
+    if (sentiment.includes("positive")) alertClass = "alert-success";
+    else if (sentiment.includes("negative")) alertClass = "alert-danger";
+
+    document.getElementById("resultBox").innerHTML =
+        `<div class="alert ${alertClass}"><h5>Prediction: <strong>${data.sentiment}</strong></h5></div>`;
+}
+
+function clearResult() {
+    document.getElementById("tweet").value = "";
+    document.getElementById("resultBox").innerHTML = "";
+}
 </script>
 </body>
 </html>
